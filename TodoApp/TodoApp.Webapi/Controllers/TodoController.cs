@@ -23,9 +23,9 @@ namespace TodoApp.Webapi.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add([FromBody]TodoDto todo)
+        public IActionResult Add([FromBody] TodoDto todo)
         {
-            _dbContext.Todos.Add(new Todo { Id = Guid.NewGuid(), Title = todo.Title});
+            _dbContext.Todos.Add(new Todo { Id = Guid.NewGuid(), Title = todo.Title });
             _dbContext.SaveChanges();
             return Ok(HttpStatusCode.Created);
         }
